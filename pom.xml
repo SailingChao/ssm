@@ -6,7 +6,6 @@
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ssm Maven Webapp</name>
-	<url>http://github.com/liyifeng1994/ssm</url>
 	<dependencies>
 		<!-- 单元测试 -->
 		<dependency>
@@ -142,5 +141,21 @@
 	</dependencies>
 	<build>
 		<finalName>ssm</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<!--  关于运行和编译级别，请注意服务器的jdk版本，编译运行版本应该与系统默认版本一致-->
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
+	<properties>
+    	<java.version>1.8</java.version>
+	 	<maven.compiler.source>${java.version}</maven.compiler.source>
+	 	<maven.compiler.target>${java.version}</maven.compiler.target>
+  	</properties>
 </project>
